@@ -1,7 +1,7 @@
- * Plugin Name			WPDB Power Tool
+ * Plugin Name		WPDB Power Tool
  *	@Package			WPDB-Power-Tool
  *	@Author				Advanced Algorythms LLC
- *	@copyright			2021 Advaned Algorythms LLC
+ *	@copyright		2021 Advaned Algorythms LLC
  *	@license			GNU General Public Liscense v3.0
  *
  *	@wpdb-power-tool
@@ -10,11 +10,11 @@
  *	Description: 		This plugin is for a wordpress site administrator/developer/student to develop plugin, template or theme tables, perform data mining, create tables and or edit tables. It also provides the means to drop/delete tables so it is not for the indescreet!
  *	Version: 			1.0.0
  * 	Requires At Least:	4.9
- *	Requires PHP:		7.3
+ *	Requires PHP:	7.3
  *	Author: 			Advanced Algorythms LLC
- *	Author URI:			https://advalgo.com
+ *	Author URI:		https://advalgo.com
  *	License:			GNU General Public Liscense v3.0
- *	License URI:		https://www.gnu.org/licenses/gpl-3.0.txt
+ *	License URI:	https://www.gnu.org/licenses/gpl-3.0.txt
  *
  *	WPDB Power Tool is free software: you can redistribute it and/or modify
  *	it under the terms of the GNU General Public License as published by
