@@ -1,0 +1,32 @@
+/* Universal Classes:    */
+.nighttime{
+    background-color: black;
+    color:white;
+}
+
+.morning{
+    background-color: yellow;
+    color: forestgreen;
+}
+
+.afternoon{
+    background-color: lightblue;
+    color: forestgreen;
+}
+
+/* Font Classes ->>>>>------------>> */
+.blue-font { color: blue; }
+.red-font{ color: red; }
+.white-font{ color: white; }
+.bold-font { font-weight: bold; }
+/* <<------------<<<<<- Font Classes */
+
+/* Background classes ->>>>--------> */
+.light-blue-bg { background-color: lightblue; }
+.white-bg{ background-color: white; }
+.black-bg{ background-color: black; }
+/* <--------<<<<- Background classes */
+
+.center-text{
+    text-align: center;
+}

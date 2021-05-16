@@ -1,0 +1,203 @@
+.alert-div {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    height: 100px;
+    vertical-align: top;
+    overflow:auto;
+    resize:vertical;
+    max-width: 1400px;
+    background-color: HoneyDew;
+}
+
+.shrink_editor{
+    float:right;
+    vertical-align: top;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: Indigo;
+    border: 1px solid red;
+    color: Aqua;
+    cursor: zoom-out;
+    z-index: 50;
+}
+
+.expand_editor{
+    float: right;
+    vertical-align: top;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: Indigo;
+    border: 1px solid red;
+    color: Aqua;
+    display: none;
+    cursor: zoom-in;
+    z-index: 50;
+}
+
+.editor-div{
+    z-index: 40;
+}
+
+.editor_header_wrapper{
+    position: sticky;
+    overflow:auto;
+    z-index: 20;
+}
+
+h1.editor_header{
+    height: 30px;
+    position: relative;
+    vertical-align: top;
+    overflow:auto;
+    border: 1px solid black;
+    background-color: grey;
+    color: white;
+    font-size: 18px;
+    cursor: grabbing;
+    padding-left: 10px;
+    z-index: 20;
+}
+
+input.editor_height_text,
+input.editor_width_text{
+    font-size: 14px;
+    line-height: 1px;
+    display: inline-block;
+    z-index: 40;
+}
+
+.editor_wrapper{// contains the .query-text
+    position: sticky;
+    overflow: auto;
+    resize: both;
+    border: 2px solid green;
+    max-width: 1275px;
+    z-index: 10;
+}
+
+.hist-div{
+    z-index: 41;
+}
+
+h1.history_header{
+    height: 30px;
+    position: relative;
+    vertical-align: top;
+    overflow:auto;
+    border: 1px solid black;
+    background-color: grey;
+    color: white;
+    font-size: 18px;
+    cursor: grabbing;
+    padding-left: 10px;
+    z-index: 20;
+}
+
+.history_header_wrapper{
+    position: sticky;
+    overflow:auto;
+    z-index: 20;
+}
+
+.history_wrapper{
+    position: sticky;
+    overflow: auto;
+    resize: both;
+    border: 2px solid green;
+    max-width: 1275px;
+    z-index: 10;
+}
+
+.shrink_history{
+    float:right;
+    vertical-align: top;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: seagreen;
+    border: 1px solid red;
+    color: yellow;
+    cursor: zoom-out;
+    z-index: 50;
+}
+
+.expand_history{
+    float: right;
+    vertical-align: top;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: seagreen;
+    border: 1px solid red;
+    color: yellow;
+    display: none;
+    cursor: zoom-in;
+    z-index: 50;
+}
+
+.history-header-table{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    overflow: auto;
+    resize: both;
+}
+
+.history-header-th{
+        border: 1px solid purple;
+        border-collapse: collapse;
+        background-color: seagreen;
+        color: yellow;
+}
+
+.history-header-id{
+    width: 40px;
+}
+
+.history-header-sql_time{
+    width: 80px;
+}
+
+.history-header-the_sql{
+
+}
+
+.query-text {
+    overflow: auto !important;
+    resize: both;
+    height: 1050px;
+    width: 1050px;
+    cursor: row-resize;
+}
+
+.text_data_pre{
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    padding: 5px;
+    width: 700px;
+}
+
+/* Select field text on click: */
+.text_data_pre,
+.show_td{
+    -webkit-touch-callout: all;  /* iOS Safari */
+    -webkit-user-select: all;    /* Safari */
+    -khtml-user-select: all;     /* Konqueror HTML */
+    -moz-user-select: all;       /* Firefox */
+    -ms-user-select: all;        /* Internet Explorer/Edge */
+    user-select: all;            /* Chrome and Opera */
+}
+
+.results-div {
+    grid-column: 1 / span 6;
+    grid-row: 2 / span 3;
+    overflow: auto;
+    resize: both;
+    width: 1200px;
+    max-width: 1510px;
+    height: 667px;
+    max-height: 667px;
+    z-index: 1;
+}

@@ -1,0 +1,407 @@
+/*************** Query Tool Tab Classes: ****************/
+/***** Query Builder jQuery starts at editor.js L:46 ****/
+.select_tables{
+    height: 550px;
+    max-height: 550px;
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.select_table_div{
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    height: 50px;
+    vertical-align: top;
+    width: 450px;
+
+}
+
+.select_table_th,
+.select_rows_th{
+    background-color: #008000;
+    color: yellow;
+    border: 1px solid purple;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+.select_table_td{
+    width: 400px;
+    font-size: 18px;
+    background-color: CadetBlue;
+    color: DarkBlue;
+    padding: 3px;
+    cursor: zoom-in;
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.select_rows_td{
+    font-size: 18px;
+    text-align: center;
+    background-color: LightGoldenRodYellow;
+    color:CornflowerBlue;
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.select_table_span{
+    font-size: 18px;
+    color: purple;
+    padding: 3px;
+    text-align: center;
+    width: 450px;
+}
+
+.query_options{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: grey;
+    color: lightgreen;
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+.query_builder{
+
+}
+
+#select_builder{
+    border: 1px solid
+    font-size: 18px;
+}
+
+#show_table{
+    display: none;
+}
+
+
+#show_output{
+    display: none;
+}
+
+#select_id{
+    border: 1px solid purple;
+    font-size: 18px;
+    background-color: lightseagreen;
+    color: aqua;
+    cursor: crosshair;
+    padding: 3px;
+}
+
+
+#where_id{
+    border: 1px solid purple;
+    font-size: 18px;
+    background-color: MidnightBlue;
+    color: aqua;
+    cursor: crosshair;
+    padding: 3px;
+}
+
+#order_id{
+    border: 1px solid purple;
+    font-size: 18px;
+    background-color: green;
+    color: aqua;
+    cursor: crosshair;
+    padding: 3px;
+}
+
+#limit_id{
+    border: 1px solid purple;
+    font-size: 18px;
+    background-color: black;
+    color: aqua;
+    cursor: crosshair;
+    padding: 3px;
+}
+
+.reset_div{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: grey;
+    color: aqua;
+    text-align: center;
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+#reset_select,
+#reset_where,
+#reset_order{
+    display: none;
+}
+
+
+.show_output{
+    display: none;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: grey;
+    color: lightblue;
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+.builder_select{
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    height: auto;
+    vertical-align: top;
+    overflow:auto;
+    resize:vertical;
+    width: 500px;
+    max-width: 1400px;
+}
+
+.query_div{
+    display:inline;
+}
+
+.builder_tables{
+    display: none;
+    grid-column: 1 / span 6;
+    grid-row: 2 / span 3;
+    border: 1px solid gold;
+    overflow: auto;
+    resize: both;
+    width: 450px;
+    max-width: 500px;
+    height: 667px;
+    max-height: 667px;
+    z-index: 1;
+}
+
+.builder_table{
+    display: none;
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 3;
+    border: 1px solid gold;
+    border-collapse: collapse;
+    width: 500px;
+    overflow: auto;
+    resize: horizontal;
+    max-height: 600px;
+}
+
+.table_fields{
+    border: 1px solid gold;
+    border-collapse: collapse;
+    width: 498px;
+}
+
+.table_name_tr{
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.field_th{
+    border: 1px solid MediumBlue;
+    border-collapse: collapse;
+    background-color: lightpink;
+    color: DarkBlue;
+    font-size: 18px;
+}
+
+.table_name_th{
+    font-size: 20px;
+    background-color: lightgreen;
+    color: indigo;
+    text-align: center;
+    padding: 3px;
+}
+
+.field_name_td,
+.field_type_td{
+    border: 1px solid MediumBlue;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+.field_name_td{
+    font-size: 18px;
+    background-color: lightseagreen;
+    color: aqua;
+    border: 1px solid MediumBlue;
+    border-collapse: collapse;
+    cursor: zoom-in;
+}
+
+.field_type_td{
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    border: 1px solid MediumBlue;
+    border-collapse: collapse;
+}
+/*** Query Buckets ***/
+.select_fields,
+.from_table,
+.where_fields,
+.order_by_fields,
+.limit_fields{
+    display: none;
+}
+/** End Query Bucket **/
+.note{/* For each Query part */
+    font-size: 16px;
+    color:darkgreen;
+    margin-top: 3px;
+    padding:3px;
+    width: 450;
+}
+/***************************/
+/** Main div contaniers:   */
+.query-tool-tab {
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px 250px;
+    border: 2px solid DarkGoldenRod;
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/BigAnglerFish.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 600px 412px;
+    max-width: 1375px;
+}
+
+.history-table {
+    border-collapse: collapse;
+    font-size: 12px;
+    padding: 2px;
+    max-height: 800px;
+}
+
+.history-tr {
+    border: 1px solid purple;
+    border-collapse: collapse;
+    padding: 2px;
+    width: 100%;
+}
+
+.history-th {
+    text-align: center;
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: grey;
+    color: white;
+}
+
+.remove-sql-td {
+    text-align: center;
+    padding: 2px;
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: red;
+    color: white;
+    cursor: zoom-out;
+}
+
+.remove-sql-td[title]:hover::before {
+    content: attr(title);
+    border: 1px solid purple;
+    color: yellow;
+    background-color: red;
+    position: absolute;
+    left: 26px;
+    height: 20px;
+}
+
+.sql-time-td {
+    border: 1px solid purple;
+    background-color: lightblue;
+    border-collapse: collapse;
+    text-align: center;
+    width: 125px;
+    padding: 2px;
+}
+
+.history-td {
+    position: relative;
+    display: inline-block;
+    padding: 2px;
+    border: 1px solid purple;
+    text-align: left;
+    background-color: LightGreen;
+    cursor: zoom-in;
+}
+
+.history-td[title]:hover::before {
+    content: attr(title);
+    background-color: seagreen;
+    color: Aquamarine;
+    position: absolute;
+    left: -120px;
+    width: 110px;
+    height: 20px;
+    padding: 3px;
+}
+/* !!!!!!!!! End Div Containers !!!!!!!!!!! */
+/************** RESULTS TABLE ***************/
+.results-table{
+    border-collapse: collapse;
+    border: 1px solid purple;
+    overflow: auto;
+    max-height: 325px;
+}
+
+.results-tr{
+    border-collapse: collapse;
+    border: 1px solid purple;
+    color: black;
+    background-color: white;
+}
+
+.results-th {
+    border-collapse: collapse;
+    border: 1px solid purple;
+    background-color: Aquamarine;
+    text-align: center;
+    padding: 2px;
+}
+
+
+.results-td {
+    border-collapse: collapse;
+    border: 1px solid purple;
+    max-width: 300px;
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.no-rows-tr{
+    border-collapse: collapse;
+    border: 1px solid purple;
+}
+
+.no-rows-td{
+    border-collapse: collapse;
+    border: 1px solid purple;
+}
+/* !!!!!! End Results Table !!!!!!! */
+/* ! EndQuery Tool Div containers ! */
+a.get-query {
+    position: relative;
+    display: inline;
+    margin-top: 20px;
+}
+
+a.get-query[title]:hover::after {
+    content: attr(title);
+    color: green;
+    position: fixed;
+    left: 260px;
+}
+/* !!!!!!!!!! End Query Tool Tab !!!!!!!!!!! */

@@ -1,0 +1,244 @@
+/******** Stored Procedures Div containers ********/
+.sp_wrapper{
+    display: grid;
+    grid-template-columns: 255px 255px 255px 255px 255px;
+    border: 1px solid DarkGoldenRod;
+    background-image: url(/wp-content/plugins/wpdb-power-tool/assets/images/Stingray.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 600px 600px;
+    height: 950px;
+}
+
+.stored_procedures{
+    grid-column: 1;
+    grid-row: 2;
+    z-index: 10;
+    overflow: auto;
+    width: 510px;
+    max-width: 1200px;
+    height: 849px;
+}
+
+.editor_results{
+    color: purple;
+    background-color: white;
+    position: absolute !important;
+    overflow: auto;
+    resize: both;
+    margin-top: 50px;
+}
+/***** END Stored Procedures Div containers *******/
+/********** Stored Procedure Test Form ************/
+.working_on{
+    max-width: 200px;
+    display: inline-block;
+}
+
+.builtin_display{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: grey;
+    color: lightblue;
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+
+}
+
+.test_sp_form{
+    font-size: 18px;
+    background-color: DarkCyan;
+    border: 1px solid purple;
+    color: yellow;
+    padding: 5px;
+}
+
+.test_sp_text{
+}
+
+a.test_sp_submit_a{
+    background-color: Coral;
+    color:white;
+    font-size: 12px;
+    border: 2px solid darkgreen;
+    padding: 5px;
+    cursor: pointer;
+}
+/********* End Stored Procedure Test Form *********/
+.sp_blank{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: grey;
+    color: lightgreen;
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+.sp_show_procedures{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: purple;
+    color: white;
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+    display: none;
+}
+
+.sp_log{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: purple;
+    color: white;
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+.sp_show_output {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: purple;
+    color: white;
+    border: 1px solid black;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+    display: none;
+}
+
+.sp_blank:hover{
+    color: red;
+}
+
+/* Stored Procedure Test Results Table: */
+.sp_results_table{
+    border-collapse: collapse;
+    border: 1px solid purple;
+    background-color: white;
+}
+
+.results_tr{
+}
+
+.sp_results_th{
+    font-size: 18px;
+    background-color: DarkCyan;
+    border: 1px solid purple;
+    border-collapse: collapse;
+    color: yellow;
+    padding: 5px;
+
+}
+
+.sp_results_td{
+    border-collapse: collapse;
+    border: 1px solid purple;
+    background-color: white;
+    vertical-align: top;
+    padding:3px;
+}
+
+/* Stored Procedures Display Table: */
+.sp_table{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    z-index: 10;
+    border: 1px solid black;
+    width: 500px;
+    max-height: 800px;
+}
+
+.sp_tr{
+
+}
+
+.sp_th{
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.nend_name_td{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: white;
+    padding: 3px;
+    font-size: 16px;
+    color: blue;
+}
+
+.nend_td{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/Sloth.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    width: 20px;
+    padding-left: 18px;
+    background-size: 15px 15px;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.nend_a{
+    cursor: zoom-in;
+}
+
+.sp_name_td{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: lightgreen;
+    padding: 3px;
+    font-size: 16px;
+    color: blue;
+}
+
+.sp_name_a{
+    cursor: zoom-in;
+}
+
+.sp_test_td{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: seagreen;
+    text-align: center;
+    color: yellow;
+    font-size: 16px;
+    padding: 3px;
+    font-size: 18px;
+}
+
+.test_sp_a{
+    cursor: help;
+    color: yellow;
+}
+
+.sp_drop_td{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 3px;
+    font-size: 18px;
+    cursor: zoom-out;
+}
+
+.sp_drop_a{
+    color: white;
+}
+
+.sp_date_td{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-right: 2px;
+}

@@ -1,0 +1,426 @@
+.comment-span {
+    font-size: 18px;
+    color: forestgreen;
+    font-style: normal;
+}
+
+/****** WPDB Tables Tab Header parts ********/
+.tables_label{
+    color: purple;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.plain_text {
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-top: 5px;
+}
+h1.query-tool,
+h1.wpdb-table {
+    padding: 2px;
+    margin: 2px;
+    vertical-align: top;
+    width: 100%;
+}
+
+h1.desc_table {
+    text-align: left;
+}
+
+.about-p {
+    font-size: 16px;
+    color: black;
+    font-style: normal;
+}
+
+.warning-p {
+    font-size: 16px;
+    color: firebrick;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/** Divs for Left and Right Columns and ***
+Right top and bottom blocks on WPDB Tables Tab
+*********************************************/
+.table-container {
+    display:grid;
+    grid-template-columns: 225px 225px 225px 225px 225px 225px;
+    grid-gap: 5px;
+    font-family: sans-serif;
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/Octopus.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 412px 412px;
+    padding-left: 18px;
+}
+
+.table-leftcolumn {
+    grid-row: 1 /span 2;
+    grid-column: 1 /span 4;
+    width: 510px;
+    float: left;
+    vertical-align: top;
+    max-height: 820px;
+    overflow: auto;
+    resize: both;
+    border: 2px solid DarkGoldenRod;
+}
+
+.table-righttop {
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 2;
+    padding: 5px;
+    width: 700px;
+    overflow: auto;
+    resize: both;
+    height: 150px;
+    margin-left: 55px;
+}
+
+.table-rightbottom {
+    grid-row: 2 / span 3;
+    grid-column: 3 /span 4;
+    width: 1100px;
+    overflow: auto;
+    resize: both;
+    max-height: 660px;
+    margin-left: 55px;
+}
+
+/**** End Columns and Blocks CSS ***
+
+/***** WPDB Table Tab:  */
+/********** Desc Table Table *******/
+.desc-table{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: AntiqueWhite;
+}
+
+.desc-tr{
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.desc-th{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: lightblue;
+}
+
+.desc-td{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    padding:3px;
+}
+/********** END DESC TABLE **********/
+/************ Show Table ************/
+.show-table{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: Thistle;
+    color: DarkSlateBlue;
+}
+
+.show-tr{
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.show-th{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    background-color: lightblue;
+    padding: 3px;
+}
+
+.show-td{
+    border: 1px solid purple;
+    border-collapse: collapse;
+    padding:3px;
+    color: black;
+    vertical-align: top;
+}
+/********** END Show Table **********/
+.table-table,
+.table-tr,
+.table-th,
+.table-td {
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.table-table {
+    width: 490px;
+}
+
+.desc-backup-td {
+    background-color: black;
+    color: AntiqueWhite;
+    vertical-align: middle;
+    padding: 3px;
+    font-style: normal;
+    width: 300px;
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/Elephant.webp");
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 18px;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.size_td {
+    text-align: center;
+}
+
+.desc-backup-a {
+    cursor: pointer;
+    color: AntiqueWhite;
+    background-color: black;
+    font-style: normal;
+}
+
+.desc-wpdrop-td {
+    background-color: IndianRed;
+    color: AntiqueWhite;
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/RedBackCuz.webp");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 15px 15px;
+    padding-left: 18px;
+    width: 15px;
+    height: 15px;
+}
+
+.desc-wpdrop-a {
+    cursor: pointer;
+}
+
+.desc-wpdb-td {
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/Elephant.webp");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 15px 15px;
+    background-color: SpringGreen;
+    padding-left: 18px;
+    width: 15px;
+    height: 15px;
+}
+
+.desc-wp-td {
+    background-color: white;
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/glass-wp-logo-sm.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 18px;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.desc-a {
+    cursor: pointer;
+}
+
+.drop-wptable-td {
+    border: 1px solid purple;
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/glass-wp-logo-sm.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.drop-wpdbtable-td {
+    border: 1px solid purple;
+    background-image: url("/wp-content/plugins/wpdb-power-tool/assets/images/Elephant.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+}
+
+.final-drop-td {
+    border: 1px solid purple;
+    background-color: black;
+    padding: 3px;
+    color: AntiqueWhite;
+    text-align: center;
+    padding: 3px;
+}
+
+.final-drop-a {
+    color: AntiqueWhite;
+    cursor: pointer;
+}
+
+.final-drop-td[title]:hover::before {
+    border: 1px solid purple;
+    content: attr(title);
+    color: yellow;
+    background-color: red;
+    position: absolute;
+}
+
+.backup-a:hover,
+.desc-a:hover,
+.drop-a:hover,
+.show-a:hover,
+.restore-a:hover {
+    color: firebrick;
+}
+
+
+.drop-td {
+    border: 1px solid purple;
+    background-color: LightGreen;
+    color: AntiqueWhite;
+    text-align: center;
+    width: 30px;
+    padding: 3px;
+}
+
+.drop-a {
+    cursor: pointer;
+    font-weight: bolder;
+    background-color: LightGreen;
+    color: black;
+}
+
+.backup-td {
+    border: 1px solid purple;
+    text-align: center;
+    background-color: #006799;
+    color: AntiqueWhite;
+    width: 40px;
+    padding: 3px;
+}
+
+.backup-a {
+    cursor: pointer;
+    color: AntiqueWhite;
+}
+
+.blank-a {
+    border: 1px solid purple;
+    background-color: grey;
+}
+
+.restore-td{
+    position: relative;
+    border: 1px solid purple;
+    text-align: center;
+    padding: 3px;
+    background-color: forestgreen;
+    color: AntiqueWhite;
+}
+
+.restore-td[title]:hover::before {
+    content: attr(title);
+    color: Aquamarine;
+    background-color: seagreen;
+    position: absolute;
+    left: -200px;
+    width: 200px;
+    height: 20px;
+}
+
+.restore-drop-td {
+    position: relative;
+    display: inline-block;
+    border: 1px solid purple;
+    text-align: center;
+    padding: 3px;
+    background-color: IndianRed;
+    color: AntiqueWhite;
+}
+
+.restore-drop-td[title]:hover::before {
+    content: attr(title);
+    color: Aquamarine;
+    background-color: seagreen;
+    position: absolute;
+    left: -200px;
+    width: 200px;
+    height: 20px;
+}
+
+.restore-a {
+    cursor: pointer;
+    color: AntiqueWhite;
+}
+
+.restore-drop-a {
+    cursor: pointer;
+}
+
+.show-rows-td {
+    border: 1px solid purple;
+    color: Gold;
+    background-color: DarkCyan;
+    text-align: center;
+    padding: 3px;
+    width: 30px;
+}
+
+.show-a {
+    color: Gold;
+    background-color: DarkCyan;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.backup-td,
+.show-td,
+.blank-td,
+.drop-td {
+    border: 1px solid purple;
+    border-collapse: collapse;
+}
+
+.desc-a:active,
+.show-a:active {
+    color: red;
+}
+
+.blank-td {
+    background-color: DarkSlateGrey;
+}
+
+.rows-td {
+    text-align: center;
+}
+/***** END WPDB Tables ******/
+/*********** Reference Tab *******************/
+table.reference_table {
+    width: 50%;
+    background-color: DarkSlateGrey;
+    background-image: url("https://advalgo.com/wp-content/plugins/wpdb-power-tool/assets/images/BigAnglerFish.webp");
+    opacity: 0.90;
+}
+
+.reference_header_td {
+    text-align: center;
+    color: yellow;
+}
+
+.reference_title_td {
+    color: black;
+    width: 40%;
+    text-align: right;
+    padding: 5px;
+}
+
+.reference_desc_td {
+    color: black;
+    width: 60%;
+    text-align: left;
+    padding: 5px;
+}
+
+/***************** End Reference Tab ********/

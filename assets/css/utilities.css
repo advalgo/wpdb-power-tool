@@ -1,0 +1,91 @@
+.utilities_wrapper{
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px 250px 250px;
+    border: 1px solid DarkGoldenRod;
+    height: 755px;
+}
+
+.utilities_menu{
+    grid-row: 1 / span 9;
+    grid-column: 1;
+    border: 1px solid purple;
+    display: block;
+    margin: 5px;
+    text-align: center;
+}
+
+.utilities_item_header{
+    grid-row: 1;
+    grid-column: 2 / span 9;
+    border: 1px solid black;
+    display: block;
+    margin: 5px;
+    text-align: center;
+    height: 50px;
+    width: 1325px;
+}
+
+.utilities_content_wrapper {
+    grid-row: 2 / span 8;
+    grid-column: 2 / span 8;
+    display: block;
+    margin-top: -43px;
+    padding: 15px;
+}
+
+.utilities_item{
+    width: 226px;
+    max-width: 226px;
+    display: table;
+    padding: 4px;
+    margin: 0 auto;
+    border: 2px solid purple;
+    background-color: lightseagreen;
+    color: darkgreen;
+    font-size: 18px;
+    cursor: help;
+}
+
+/* Utilities Table ->>>>>--------------->> */
+.backups_table{
+    background-color: LightGreen;
+    border: 1px solid seagreen;
+    border-collapse: collapse;
+}
+
+.backups_tr{
+    border: 1px solid blue;
+    border-collapse: collapse;
+}
+
+.backups_td,
+.filename_td,
+.restore_td,
+.delete_td{
+    border-collapse: collapse;
+    border: 1px solid blue;
+    text-align: center;
+    padding: 5px;
+}
+
+.backups_td:hover,
+.filename_td:hover,
+.restore_td:hover,
+.delete_td:hover{
+    background-color: yellow;
+}
+
+.restore_a,
+.delete_a{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.create_a{
+    font-weight: bold;
+    cursor: zoom-in;
+}
+
+
+
+/* <<---------------<<<<<- Utilities Table */
