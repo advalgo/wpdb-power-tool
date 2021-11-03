@@ -16,7 +16,9 @@
 
 /* Font Classes ->>>>>------------>> */
 .blue-font { color: blue; }
+.green-font{ color: green; }
 .red-font{ color: red; }
+.seagreen-font{ color: seagreen; }
 .white-font{ color: white; }
 .bold-font { font-weight: bold; }
 /* <<------------<<<<<- Font Classes */
@@ -29,4 +31,16 @@
 
 .center-text{
     text-align: center;
+}
+
+.text-r{
+    text-align: right;
+}
+
+.text-l{
+    text-align: left;
+}
+
+.text-j{
+    text-align: justify;
 }

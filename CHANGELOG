@@ -13,3 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     c.) Delete backups
     d.) Restore backups
     e.) Link to download backed up database
+
+## [1.1.1] - 2021-06-21
+### Added
+Page Title is set to Tab page is on (ie. if you are on Query Tool tab Title is
+Query Tool).
+
+## [1.1.2] - 2021-07-08
+### Added
+Added feature to load editor with query being run from SQL History.

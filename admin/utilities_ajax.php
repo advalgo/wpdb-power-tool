@@ -1,11 +1,26 @@
 <?php
-    // WPDBPT_POWERTOOL_BACKUPS_DIR is full directory from root of server
-    // WPDBPT_POWERTOOL_BACKUPS_URI is path for webserver (ie  /-wp-content/plugins/wpdbpowertool/backups
-
+    /* Contants for utilities_ajax.php app:
+     * WPDBPT_POWERTOOL_BACKUPS_DIR is full directory from root of server
+     * WPDBPT_POWERTOOL_BACKUPS_URI is path for webserver (ie  /-wp-content/plugins/wpdbpowertool/backups
+     * WPDBPT_POWERTOOL_INCLUDES Directory
+     */
+    /* Backups Methods: ->>>>>--------------->> */
     add_action( 'wp_ajax_DisplayBackups', 'DisplayBackups_response' );
     add_action( 'wp_ajax_CreateBackup', 'CreateBackup_response' );
     add_action( 'wp_ajax_RestoreBackup', 'RestoreBackup_response' );
     add_action( 'wp_ajax_DeleteBackup', 'DeleteBackup_response' );
+    /* <<----------------<<<<<- Backups Methods */
+    /* CSV2Table Methods: ->>>>-------------->> */
+    add_action( 'wp_ajax_CSV2Table', 'CSV2Table_response' );
+    /* <<---------------<<<<- CSV2Table Methods */
+
+    function CSV2Table_response(){
+        $csv2tablePage = WPDBPT_POWERTOOL_INCLUDES . '/utilities_csv2table.php';
+        //echo $csv2tablePage;
+        include($csv2tablePage);
+
+        wp_die();
+    }
 
     function DeleteBackup_response(){
         $deleteFile = WPDBPT_POWERTOOL_BACKUPS_DIR . '/' . $_REQUEST['queryText'];

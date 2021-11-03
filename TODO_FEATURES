@@ -1,0 +1,36 @@
+2021-03-17
+All:
+    Ensure critical tables cannot be DROPPED or ALTERED
+
+WPDB Tables:
+    Current Version:
+        * Add Uninstall feature to restore tables in Dropped status
+
+    * These are version 2 feature to add:
+        * Demo Tutorial with WPDB Power Tool - Set my user password sql
+        * Demo Tutorial with WPDB Power Tool - Update my website URL sql
+
+Support:
+    All Support is to be initiated via email support groups are:
+        1. Bug report - by tab
+        2. Usage issue - something is not doing what it is supposed to by tab
+        3. Feature suggestion
+
+Upgrades:
+    * Create a backup version on Insert Update and Delete
+    * Provide Protect Tables option
+    * Allow updates on WordPress table data
+    * Allow multiple backups of tables
+    * Allow multiple backups of stored procedures
+    * Provide SQL templates for multiple SQL Statements
+    * Full database backup
+    * Full database restore
+    * Create Stored procedure and query library with notes
+    * Add sort by column feature - PAY
+    * Add Hide WordPress Tables - Checkbox BOTH
+    * Add Hide Dropped Tables Checkbox
+    * Add test Function feature - PAY
+    * Add Archived versions of Functions
+    * Table Maker - for creating tables in WordPress
+    * Add CSV to Table/Table Fields to CSV
+    * JSON to Table/Table to JSON

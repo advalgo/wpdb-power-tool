@@ -1,4 +1,8 @@
 jQuery(document).ready(function($) {
+    // Initialize values:
+    var thisTab = $('.nav-tab-active').text();
+    document.title = thisTab;
+    
     // For additional AJAX Calls:
     var timeDelay = 1000;
     // Instructions Tab ->>>>>---------->

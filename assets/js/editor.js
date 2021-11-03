@@ -18,6 +18,7 @@
 jQuery(document).ready(function($){
     // Initialize values:
     var thisTab = $('.nav-tab-active').text();
+    document.title = thisTab;
 
     var timeDelay = 1000;
     // Mobile resizable Editor!
@@ -33,7 +34,6 @@ jQuery(document).ready(function($){
     // Tweak display for Query Tool and Stored Procedure Tabs:
     if((thisTab == "Query Tool") || (thisTab = 'Stored Procedures')){
         if(thisTab == "Query Tool"){
-            $(document).prop('title', 'Query Tool');
             $('.editor_wrapper').css('width','600px');
             $('.editor_header_wrapper').css('width','604px');
             $('.editor_width_text').val('600');
@@ -71,7 +71,6 @@ jQuery(document).ready(function($){
             }
         }
         if(thisTab == 'Stored Procedures'){
-            $(document).prop('title', 'Stored Procedures');
             $('.editor_wrapper').css('width','950px');
             $('.editor_header_wrapper').css('width','954px');
             $('.editor_width_text').val('950');
@@ -626,6 +625,8 @@ jQuery(document).ready(function($){
 
         var queryText = $(this).html();
         $('.alert-div').html('<pre class="text_data_pre">'+queryText+'</pre>');
+        myEditor.codemirror.setValue(queryText);
+        
         SimpleCall('runSQL', queryText, '.results-div');
         setTimeout(LoadHistory, timeDelay);
     });

@@ -58,8 +58,7 @@ define( 'WPDBPT_POWERTOOL_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WPDBPT_DEBUG', true);
 
 // Check for updates:
-//require_once(WPDBPT_POWERTOOL_INCLUDES . '/updater.php');
-
+require_once(WPDBPT_POWERTOOL_INCLUDES . '/update_plugin.php');
 
 /* The code that runs during plugin activation.
  * This action is documented in includes/classes/class-wpdb-power-tool-activator.php */
