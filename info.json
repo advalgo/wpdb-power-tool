@@ -1,0 +1,18 @@
+{
+	"version" => "1.0",
+	"download_url" : "https://wpdbpowertool.com/wpdb-power-tool.zip",
+	"requires" : "5.6",
+	"tested" : "4.9",
+	"requires_php" : "5.6",
+	"last_updated" : "2021-03-18 02:10:00",
+	"sections" : {
+		"description" : "Plugin to allow you easy access to the WordPress database, build stored procedures and various other features and utilities.",
+		"installation" : "Upload the plugin to your blog, Activate it, that's it!",
+		"changelog" : "<h4>1.1 –  January 17, 2020</h4><ul><li>Some bugs are fixed.</li><li>Release date.</li></ul>"
+	},
+	"banners" : {
+		"low" : "https://YOUR_WEBSITE/banner-772x250.jpg",
+		"high" : "https://YOUR_WEBSITE/banner-1544x500.jpg"
+	},
+	"screenshots" : "<ol><li><a href='IMG_URL' target='_blank'><img src='IMG_URL' alt='CAPTION' /></a><p>CAPTION</p></li></ol>"
+}

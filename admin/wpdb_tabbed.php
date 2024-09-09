@@ -24,8 +24,8 @@
         <a href="?page=tabbed_wpdb&tab=wpdbTables" class="nav-tab <?php if($tab==='wpdbTables') echo 'nav-tab-active'; ?>">WPDB Tables</a>
         <a href="?page=tabbed_wpdb&tab=wpdbQueryTool" class="nav-tab <?php if($tab==='wpdbQueryTool') echo 'nav-tab-active'; ?>">Query Tool</a>
         <a href="?page=tabbed_wpdb&tab=wpdbStoredProcs" class="nav-tab <?php if($tab==='wpdbStoredProcs') echo 'nav-tab-active'; ?>">Stored Procedures</a>
-        <a href="?page=tabbed_wpdb&tab=wpdbUtilities" class="nav-tab <?php if($tab=='wpdbUtilities') echo 'nav-tab-active'; ?>">Utilities</a>
-		<a href="?page=tabbed_wpdb&tab=wpdbInstructions" class="nav-tab <?php if($tab==='wpdbInstructions') echo 'nav-tab-active'; ?>">Instructions</a>
+		<a href="?page=tabbed_wpdb&tab=wpdbInstructions" class="nav-tab <?php if($tab==='wpdbSupport') echo 'nav-tab-active'; ?>">Instructions</a>
+        <a href="?page=tabbed_wpdb&tab=wpdbAbout" class="nav-tab <?php if($tab==='wpdbAbout') echo 'nav-tab-active'; ?>">About</a>
 	</nav>
 
 	<div class="tab-content">
@@ -45,9 +45,9 @@
         case 'wpdbInstructions':
             include(WPDBPT_POWERTOOL_ADMIN . '/instructions.php');
             break;
-        case 'wpdbUtilities':
-            include(WPDBPT_POWERTOOL_ADMIN . '/utilities.php');
-            break;
+		case 'wpdbAbout':
+		    include(WPDBPT_POWERTOOL_ADMIN . '/about.php');
+		    break;
 		default:
 			echo 'Do you know why you are here?<br>';
     }

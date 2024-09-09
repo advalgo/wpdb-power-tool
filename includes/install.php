@@ -1,29 +1,20 @@
 <?php
-TestForTables();
-
-function TestForTables(){ // For reactivation after deactivation:
-    global $wpdb;
-
-    $sql = "SELECT COUNT(*) AS theCount FROM INFORMATION_SCHEMA.TABLES WHERE LCASE(TABLE_NAME) LIKE('%wpdbpt%');";
-    $count = $wpdb->get_var($sql);
-
-    if($count == 0){
-        BuildTables();
-        buildProcedures();
-        LoadObjects();
-    }
-}
+BuildTables();
+buildProcedures();
+LoadObjects();
 
 function LoadObjects(){
     global $wpdb;
 
     $wpPrefix = $wpdb->prefix;
     $sql = "CALL sp_LoadSystemObjects('" . DB_NAME . "','" . $wpPrefix . "');";
+
     $wpdb->query($sql);
 }
 
 function buildTables(){
     global $wpdb;
+    $wpdb->show_errors = true;
 
     $tablesSQL = WPDBPT_POWERTOOL_PATH . 'sql/tables.sql';
     $wpPrefix = $wpdb->prefix;
@@ -41,15 +32,16 @@ function buildTables(){
         }
     }
     fclose($tablesFile);
+    $wpdb->show_errors = false;
 }
 
 function buildProcedures(){
     global $wpdb;
     ini_set("auto_detect_line_endings", true);
 
-    $proceduresFile = WPDBPT_POWERTOOL_PATH . 'sql/procedures.sql';
+    $proceduresSQL = WPDBPT_POWERTOOL_PATH . 'sql/procedures.sql';
     $wpPrefix = $wpdb->prefix;
-    $proceduresFile = fopen($proceduresFile, "r");
+    $proceduresFile = fopen($proceduresSQL, "r");
     $thisSQL = '';
 
     while(!feof($proceduresFile)){
@@ -58,9 +50,9 @@ function buildProcedures(){
             $sql = str_replace('WORDPRESS_', $wpPrefix, $thisSQL);
             $sql = str_replace(' #END PROC', '', $sql);
             $thisSQL = '';
+
             $wpdb->query($sql);
         }
     }
-    fclose($proceduresFile);
 }
 ?>

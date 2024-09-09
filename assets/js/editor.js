@@ -1,25 +1,6 @@
-/*  WPDB Power Tool
-    Copyright (C) 2021  Advanced Algorythms LLC
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
 jQuery(document).ready(function($){
     // Initialize values:
     var thisTab = $('.nav-tab-active').text();
-    document.title = thisTab;
-
     var timeDelay = 1000;
     // Mobile resizable Editor!
     $(".editor-div").draggable();
@@ -81,17 +62,17 @@ jQuery(document).ready(function($){
             $('.editor-div').css('grid-column','3 / span 4');
         }
     }
-    /* END Tweak display for Query Tool and Stored Procedure Tabs */
-    /* Query Builder ->>>>>----------------->> */
+    /* ---------------------- END ------------------------ */
+    /******************** Query Builder ********************/
     $(document).on('click', '#select_builder', function(){
         $('.results-div').hide();
         $('.builder_tables').show();
         $('.alert-div').hide();
-        $('.builder_select').hide();
         $('span.select_table_span').show();
         $('.query_div').show();
         $('.show_output').show();
         $('.select_table_div').show();
+        $('.builder_select').hide();
 
         var testStr = $('.builder_tables').html();
         var builderTablesLength =  testStr.length;
@@ -249,6 +230,14 @@ jQuery(document).ready(function($){
         LoadQuery();
     });
 
+    function LoadQuery(){
+        var sql = $('.select_fields').html()+"\n"+
+            $('.from_table').text()+"\n"+
+            $('.where_fields').text()+"\n"+
+            $('.order_by_fields').text();
+        myEditor.codemirror.setValue(sql);
+    }
+
     $(document).on('click', '#limit_id', function(){
         var sql = $('.select_fields').html()+"\n"+
             $('.from_table').html()+"\n"+
@@ -260,9 +249,9 @@ jQuery(document).ready(function($){
 
     $(document).on('click', '.field_name_td', function(){
         var thisField = $(this).attr('id');
-        var select = $('.select_fields').text();
-        var where = $('.where_fields').text();
-        var order_by = $('.order_by_fields').text();
+        var select = $('.select_fields').html();
+        var where = $('.where_fields').html();
+        var order_by = $('.order_by_fields').html();
 
         var selectLength = select.length;
         var whereLength = where.length;
@@ -281,8 +270,9 @@ jQuery(document).ready(function($){
         var bg_color = $(this).css('background-color');
         var color = $(this).css('color');
 
+        //alert('bgc: '+bg_color+' scope: '+scope);
         if(scope == 'SELECT'){
-            if(bg_color == 'rgb(32, 178, 170)'){// bg color for unselected SELECT field
+            if(bg_color == 'rgb(32, 178, 170)'){
                 // Field SELECTED:
                 $(this).css('background-color','aqua');
                 $(this).css('color', 'lightseagreen');
@@ -294,7 +284,7 @@ jQuery(document).ready(function($){
                     select = select + ", " + thisField;
                 }
             }
-            else{ // Adding another criteria:
+            else{ // Field UNSELECTED:
                 $(this).css('background-color','lightseagreen');
                 $(this).css('color', 'aqua');
 
@@ -324,42 +314,59 @@ jQuery(document).ready(function($){
         }
 
         if(scope == 'WHERE'){
-            var tempWhere = $('.where_fields').text();
-            where = tempWhere;
+            if(bg_color == 'rgb(25, 25, 112)'){
+                // Field SELECTED:
+                if(whereLength == 0){
+                    msgStr = 'Select criteria (=, !=, >, <, LIKE, NOT LIKE) for '+
+                        thisField+' should look similiar to: '+thisField+' = "John "';
+                }
+                else{
+                // Field UNSELECTED:
+                    var tempWhere = $('.where_fields').text();
 
-            // First Field SELECTED:
-            if(whereLength == 0){
-                msgStr = 'Select criteria (=, !=, >, <, LIKE, NOT LIKE) for '+
-                    thisField+' should look similiar to: '+thisField+' = "John "';
-            }
-            else{// Field being added:
-                msgStr = 'You will need to add both criteria (=, !=, >, <, LIKE, NOT LIKE) '+
-                    'something like: '+tempWhere+' AND '+thisField+' LIKE "some value".'+
-                    'for '+thisField+' as well as an AND, OR clause.\n\nChange AND/OR '+
-                    'to AND or OR\n\nIf your WHERE clause is not working hit Reset WHERE and '+
-                    'start over with a new one.';
-            }
+                    msgStr = 'You will need to add both criteria (=, !=, >, <, LIKE, NOT LIKE)'+
+                        ' for '+thisField+' as well as an AND, OR clause so it will look'+
+                        ' something like: '+tempWhere+'\nAND '+thisField+' LIKE "some value"';
+                }
 
-            if(tempWhere.length == 0){
-                tempWhere = 'WHERE '+thisField;
+                var criteria = prompt(msgStr, thisField);
+                if(criteria == null || criteria == ''){
+                    return;
+                }
+                else{
+                    $(this).css('background-color','aqua');
+                    $(this).css('color','midnightblue');
+
+                    if(whereLength == 0){
+                        where = 'WHERE '+criteria;
+                    }
+                    else{
+                        where = where +' '+criteria;
+                    }
+                }
             }
             else{
-                tempWhere = tempWhere+' AND/OR '+thisField;
-            }
+                $(this).css('background-color','midnightblue');
+                $(this).css('color','aqua');
 
-            var criteria = prompt(msgStr,tempWhere);
-            if(criteria == null || criteria == ''){
-                return;
+                testStr = thisField+', ';
+                hasComma = where.indexOf(testStr);
+                if(hasComma > 0){
+                    newWhere = where.replace(testStr, '');
+                }
+                else{
+                    newWhere = where.replace(thisField, '');
+                }
+                if(newWhere == 'WHERE '){
+                    where = '';
+                }
+                else{
+                    where = newWhere;
+                }
             }
-            else{
-                $(this).css('background-color','aqua');
-                $(this).css('color','midnightblue');
-
-                where = criteria;
-            }
-
-            $('.where_fields').text(where);
+            $('.where_fields').html(where);
         }
+
 
         if(scope == 'ORDER'){
             if(bg_color == 'rgb(0, 128, 0)'){
@@ -381,7 +388,6 @@ jQuery(document).ready(function($){
 
                 testStr = ', '+thisField;
                 hasComma = order_by.indexOf(testStr);
-
                 if(hasComma > 0){
                     newOrderBy = order_by.replace(testStr, '');
                 }
@@ -406,8 +412,8 @@ jQuery(document).ready(function($){
         }
         LoadQuery();
     });
-    /* <<-----------------<<<<<- Query Builder */
-    /* Editor sizing features ->>>>----------> */
+    /* -------------- END Query Builder ------------------ */
+    /*************** Editor sizing features ****************/
     $(document).on('blur', '.editor_height_text', function(){
         var editorHeight = $(this).val()+'px';
         $('.editor_wrapper').css('height', editorHeight);
@@ -506,10 +512,10 @@ jQuery(document).ready(function($){
         $('.history_wrapper').css('width', historyWidth);
         $('.history_header_wrapper').css('width', historyHeaderWidth);
     });
-    /* <<--------<<<<<- Editor sizing features */
-    /* Stored Procedures Tab ->>>>---------->> */
-    /*  -- Build Procedure is at line: 407 --  */
-    /* nend is short for NO EDIT NO DELETE     */
+    /*************** End Editor sizing features *************/
+    /**************** Stored Procedures Tab *****************/
+    /*    -- Build Procedure is at line: 407 --    */
+    /* nend is short for NO EDIT NO DELETE         */
     $(document).on('click', '.builtin_display', function(){
         var display = $(this).attr('id');
         if(display == 'Hide'){
@@ -609,8 +615,8 @@ jQuery(document).ready(function($){
         var sp = $(this).attr('id');
         LoadEditor('DisplayProtected', sp);
     });
-    /* <<---------<<<<<- Stored Procedures Tab */
-    /* Query Tools Tab ->>>>>--------------->> */
+    /*********** End Stored Procedures Tab **************/
+    /****************** Query Tools Tab *****************/
     $(document).on('click', '.text_data_pre', function(){
         $(this).select();
     });
@@ -625,8 +631,6 @@ jQuery(document).ready(function($){
 
         var queryText = $(this).html();
         $('.alert-div').html('<pre class="text_data_pre">'+queryText+'</pre>');
-        myEditor.codemirror.setValue(queryText);
-        
         SimpleCall('runSQL', queryText, '.results-div');
         setTimeout(LoadHistory, timeDelay);
     });
@@ -672,47 +676,25 @@ jQuery(document).ready(function($){
             // If not protected or a CREATE PROCEDURE
             $('.alert-div').html('<pre class="text_data_pre">'+queryText+'</pre>');
 
-            if(thisTab === 'Stored Procedures'){
-                var testStr = queryText.toUpperCase();
-                var isDrop = testStr.indexOf('ROP ');
-                var isAlter = testStr.indexOf('LTER ');
-                var isSelect = testStr.indexOf('ELECT ');
-                var isUpdate = testStr.indexOf('PUDATE ');
-                var isDelete = testStr.indexOf('ELETE ');
-                var isInsert = testStr.indexOf('NSERT ');
-
-
-                if(isSelect > 0 || isUpdate > 0 || isDelete > 0 || isInsert > 0){
-                    SimpleCall('runSQL', queryText, '.results-div');
-                }
-
-                if(isDrop > 0 || isAlter > 0){
-                    queryText = queryText+' not valid here.';
-                    $('.alert-div').html('<pre class="text_data_pre">'+queryText+'</pre>');
-                    alert('Use the Query Tool for running DROP or ALTER queries. So they are tracked to undo.');
-                    return;
-                }
-
+            if(thisTab == 'Stored Procedures'){
                 $('.stored_procedures').hide();
                 $('.sp_show_procedures').show();
                 $('.results-div').show();
             }
 
+            SimpleCall('runSQL', queryText, '.results-div');
             if(thisTab === "Query Tool"){
-                $('.select_table_div').hide();
-                $('.builder_tables').hide();
                 $('.builder_select').hide();
-                $('.builder_table').hide();
+                $('.note').hide();
                 $('.alert-div').show();
+                $('.builder_table').hide();
                 $('.results-div').show();
 
-                SimpleCall('runSQL', queryText, '.results-div');
                 setTimeout(LoadHistory, timeDelay);
             }
 	    }
     });
-    /* <<---------------<<<<<- Query Tools Tab */
-    /* Special Functions: ->>>>>------------>> */
+
     function LoadHistory(){
         SimpleCall('displaySQLHistory', 'isSet', '.history_wrapper');
     }
@@ -742,23 +724,14 @@ jQuery(document).ready(function($){
                 // Weird 0 from wp_die() where it can't be used
                 // without breaking myEditor.CodeMirror:
                 message = message.replace('"0"','');
-                $(destTag).html(response);
+                $(destTag).html(message);
             },
             error: function(response){
                 $(destTag).html('jQuery SimpleCall Response Error: '+response.error);
             }
         });
     }
-
-    function LoadQuery(){
-        var sql = $('.select_fields').html()+"\n"+
-            $('.from_table').text()+"\n"+
-            $('.where_fields').text()+"\n"+
-            $('.order_by_fields').text();
-        myEditor.codemirror.setValue(sql);
-    }
-    /* <<-------------<<<<<- Special Functions */
-    /* Wordpress CodeMirror Editor ->>>------> */
+    /*********** Wordpress CodeMirror Editor: *************/
     function LoadEditor(ajaxAction, dataValue){
         $('.working_on').html(dataValue);
 
@@ -786,5 +759,5 @@ jQuery(document).ready(function($){
         lineNumbers: 'true' // This actually doesn't do anything
     });
     myEditor.codemirror.setSize(1200, 1200);
-    /* <------<<<- WordPress CodeMirror Editor */
+    /******************* END CodeMirror  ******************/
 });

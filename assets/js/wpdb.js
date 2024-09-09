@@ -1,36 +1,25 @@
 jQuery(document).ready(function($) {
-    // Initialize values:
-    var thisTab = $('.nav-tab-active').text();
-    document.title = thisTab;
-    
     // For additional AJAX Calls:
     var timeDelay = 1000;
-    // Instructions Tab ->>>>>---------->
-    $(document).on('click', '.wpdb_tables_instructions', function(){
-        $('.introduction_content').hide();
-        $('.query_tool_content').hide();
-        $('.stored_procedure_content').hide();
-        $('.wpdb_tables_content').show();
+
+    // Instructions Tab
+    $(document).on('click', '#wpdbpt_tables', function(){
+        SimpleCall('WPDBTablesInstructions', '', '.instr_content_div');
     });
 
-    $(document).on('click', '.query_tool_instructions', function(){
-        $('.introduction_content').hide();
-        $('.stored_procedure_content').hide();
-        $('.wpdb_tables_content').hide();
-        $('.query_tool_content').show();
+    $(document).on('click', '#query_tools', function(){
+        SimpleCall('QueryToolInstructions', '', '.instr_content_div');
     });
 
-    $(document).on('click', '.stored_procedures_instructions', function(){
-        $('.introduction_content').hide();
-        $('.wpdb_tables_content').hide();
-        $('.query_tool_content').hide();
-        $('.stored_procedure_content').show();
+    $(document).on('click', '#build_procedure', function(){
+        SimpleCall('BuildProcedureLesson', '', '.instr_content_div');
+        setTime(LoadTables, timeDelay);
     });
-    /* <---<<<<<- End Instructions tab */
-    // Support Tab: ->>>>>------------->>
 
-
-    /* <<-------<<<<<- End Support Tab */
+    $(document).on('click', '#test_procedure', function(){
+        SimpleCall('TestProcedureLesson', '', '.instr_content_div');
+    });
+    /* !!!!!!!!!  End Instructions Tab !!!!!!!!! */
     /************** WPDB Tables Tab **************/
     $(document).on('click','.final-drop-a', function(){
         var dropTable = $(this).attr('id');
@@ -124,12 +113,16 @@ jQuery(document).ready(function($) {
             data: data,
             dataType: 'text',
             success: function(response){
+                // Scrubbing various $wpdb text responses:
+                var message = response.replace('CREATED.0', 'CREATED.');
+                message = message.replace('ted.0', 'ted.');
+                // Weird 0 from wp_die() where it can't be used
                 // without breaking myEditor.CodeMirror:
-                $(destTag).html(response);
+                message = message.replace('"0"','');
+                $(destTag).html(message);
             },
             error: function(response){
-                $(destTag).html('jQuery SimpleCall Response Error: '+response.error+
-                    ' action: '+' data: '+dataValue);
+                $(destTag).html('jQuery SimpleCall Response Error: '+response.error);
             }
         });
     }

@@ -17,7 +17,6 @@ Support:
         3. Feature suggestion
 
 Upgrades:
-    * Add full multi-site functionality to display tables by individual site
     * Create a backup version on Insert Update and Delete
     * Provide Protect Tables option
     * Allow updates on WordPress table data

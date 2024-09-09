@@ -286,7 +286,7 @@ function CheckForUpdateSQL($theSQL){
     $whereSQL = '';
     $tempSQL = $theSQL; // Preserve the original
 
-    if((strpos($tempSQL, 'PDATE ') > 0) || (strpos($tempSQL, 'pdate ') > 0) && (strpos($tempSQL, 'LOAD_FILE') === 0)){
+    if((strpos($tempSQL, 'PDATE ') > 0) || (strpos($tempSQL, 'pdate ') > 0)){
         // Update SQL Lets get count of rows to be updated:
         $tableSQL = explode(" set ", $tempSQL);
         if(count($tableSQL) === 1) $tableSQL = explode(' SET ', $tempSQL);

@@ -130,7 +130,7 @@
             $isWPDB = isWPDBTable($thisQuery);
 
             if(($isWP == 1) || ($isWPDB == 1)){
-                echo '<b class="blue-font">You cannot</b> <b class="red-font">DROP or ALTER</b> WordPress or WPDB Power Tool Tables with the Query Tool.';
+                echo 'You cannot DROP or ALTER WordPress or WPDB Power Tool Tables with the Query Tool.';
                 wp_die();
             }
         }
